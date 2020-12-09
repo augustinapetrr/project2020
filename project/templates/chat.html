@@ -1,0 +1,18 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Pokalbiai
+{% endblock %}
+
+{% block main %}
+    <h2> Pokalbiai </h2>
+    {% for row in users %}
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="border-bottom:1px solid #BEBEBE; border-bottom: margin-right: 3%;">
+                <form action="/chat" method="post">
+                    <button type="submit" name="id" style="color: #E6A8BA; background-color: white; font-weight: bold; border: 0px; padding: 0%" value="{{row['id']}}"> Pokalbis su {{row['name']}}</button>
+                </form>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

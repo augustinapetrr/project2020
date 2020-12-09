@@ -1,0 +1,22 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Skelbimai
+{% endblock %}
+
+{% block main %}
+    <h2>Skelbimų lenta</h2>
+    <div style="text-align: right; margin-right: 5%; padding-bottom: 2%"><a href="/add_board"  style="color: #E6A8BA; font-weight: bold">Pridėk skelbimą</a></div>
+    {% for row in reader %}
+        <div class="card" style="width: 95%; margin-bottom: 3%">
+            <!--<img src="..." class="card-img-top" alt="...">-->
+            <div class="card-body">
+                <h5 class="card-title">{{row['title']}}</h5>
+                <p class="card-text">{{row['text']}}</p>
+                <form action="/" method="post">
+                    <button type="submit" name="user" style="color: #E6A8BA; background-color: white; border: 0px; padding: 0%" value="{{row['name']}}">{{row['name']}}</button>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

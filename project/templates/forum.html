@@ -1,0 +1,60 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Forumas
+{% endblock %}
+
+{% block head %}
+    <link href="static/css/styles-forum.css" rel="stylesheet" />
+    <link href="static/css/styles-chat.css" rel="stylesheet" />
+{% endblock %}
+
+{% block main %}
+    <h2>Forumas</h2>
+    <div style="text-align: right; margin-right: 3%; padding-bottom: 2%"><a href="/add_topic"  style="color: #E6A8BA; font-weight: bold">Įtrauk temą</a></div>
+    <div class="scrollmenu" style="width: 97%; ">
+        {% for row in topics %}
+        <a>
+            <form action="/forum" method="post">
+                <button type="submit" style="color: white; background-color: #333;" name="topic" value="{{row['topic']}}">{{row['topic']}}</button>
+            </form>
+        </a>
+        {% endfor %}
+    </div>
+    <div>
+        <div class="container content" style="margin-top: 1%;">
+            <div class="row">
+                <h4>{{title}}</h5>
+                <div style="width: 97%; height: 370px; overflow: scroll;">
+                    <div class="card" style="background-color: #f7d7e1;">
+                		<div class="card-body height8">
+                            <ul>
+                                {% for row in posts %}
+                                <div class="card" style="width: 95%; margin-bottom: 1%">
+                                    <div class="card-body">
+                                        <p class="card-text">{{row['post']}}</p>
+                                        <form action="/link" method="post">
+                                            <button type="submit" name="writer_id" style="color: #E6A8BA; background-color: white; border: 0px; padding: 0%" value="{{row['writer_id']}}">{{row['name']}}</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form action="/post" method="post" style="padding-top: 3%; padding-right: 3%">
+                <div class="form-group" style="margin-bottom: 2%">
+                    <input type="text" autofocus class="form-control" autocomplete="off" name="post" placeholder="Rašyk savo pasisakymą čia...">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="info-button" value="Siųsti" style="float:right;">Siųsti</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

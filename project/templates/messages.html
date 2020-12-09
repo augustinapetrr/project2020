@@ -1,0 +1,56 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Tavo žinutės
+{% endblock %}
+
+{% block head %}
+    <link href="static/css/styles-chat.css" rel="stylesheet" />
+{% endblock %}
+
+{% block main %}
+    <body>
+        <h2>Tavo žinutės su {{title}}</h2>
+        <div class="container content">
+            <div class="row">
+                <div style="width: 97%; height: 435px; overflow: auto;">
+                	<div class="card">
+                		<div class="card-body height8">
+                			<ul class="chat-list">
+                			    {% for row in messages %}
+                                    {% if row['sent_from'] == my_id %}
+                                        <li class="out">
+                        					<div class="chat-body">
+                        						<div class="chat-message">
+                        							<p>{{row['message']}}</p>
+                        						</div>
+                        					</div>
+                        				</li>
+                                    {% else %}
+                           				<li class="in">
+                					        <div class="chat-body">
+                					        	<div class="chat-message">
+                							        <p>{{row['message']}}</p>
+                						        </div>
+                					        </div>
+                				        </li>
+                                    {% endif %}
+                                {% endfor %}
+                			</ul>
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form action="/messages" method="post" style="padding-top: 3%; padding-right: 3%">
+                <div class="form-group" style="margin-bottom: 2%">
+                    <input type="text" autofocus class="form-control" autocomplete="off" name="message" placeholder="Rašyk savo žinutę čia...">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="info-button" value="Siųsti" style="float:right;">Siųsti</button>
+                </div>
+            </form>
+        </div>
+    </body>
+{% endblock %}

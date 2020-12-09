@@ -1,0 +1,21 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Aklas Pasimatymas
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <h2>Aklas pasimatymas</h2>
+    <a id="box" style="left: 40%; top: 50%; height: 38%; width: 30%; text-align: justify">
+        <p style="text-transform: uppercase">{{ information['dog_name'] }}</p>
+        <p style="font-weight: normal">{{ information['dog_gender'] }}, {{ information['dog_age'] }}</p>
+        <p style="font-weight: normal">Veislė: {{ information['breed'] }}</p>
+        <p style="font-weight: normal">Apie: {{ information['about_dog'] }}</p>
+    </a>
+    <form action="/date" method="post">
+        <button name="heart" value="H" style="position: fixed; left: 30%; bottom: 20%; background-color: white; border: 0px;"><i class="fa fa-heart" style="font-size: 48px; color: #f7d7e1"></i></button>
+        <button name="cross" value="C" style="position: fixed; left: 47%; bottom: 20%; background-color: white; border: 0px;"><i class="fa fa-times" style="font-size: 54px"></i></button>
+    </form>
+    <div style="width: 20%; position: fixed; top: 35%; right: 10%; text-align: justify">"Aklas pasimatymas" - tai būdas tau ir tavo augintiniui susirasti naują draugą ar net pirmąją meilę. Skatiname nesidrovėti net jei tik domiesi šunimis ar galvoji apie šuniuko įsigijimą. Viskas veikia labai paprastai: spausk širdutę ir sukurk pokalbį su šuniuko savininku (žr. Privačios žinutės), spausk kryžiuką, jei šuniuko aprašymas neįtiko. Sėkmės!</div>
+{% endblock %}

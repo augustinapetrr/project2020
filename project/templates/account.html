@@ -1,0 +1,23 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Paskyra
+{% endblock %}
+
+{% block main %}
+    <h2>Mano paskyra</h2>
+    <div style="position: fixed; top: 15%; padding: 10%">
+        <p>Vardas: {{ user['name'] }}</p>
+        <p>Šuns vardas: {{ information['dog_name'] }}</p>
+        <p>Šuns amžius: {{ information['dog_age'] }}</p>
+        <p>Šuns veislė: {{ information['breed'] }}</p>
+        <p>Šuns lytis: {{ information['dog_gender'] }}</p>
+    </div>
+    <div style="position: fixed; left: 57%; top: 30%">
+        <p>Apie mane:</p>
+        <a id="box" style="top: 42%; color: white; font-size: small;">{{ information['about_me'] }}</a>
+        <p style="position: fixed; top: 50%">Apie mano šunį:</p>
+        <a id="box" style="top: 62%; color: white; font-size: small;">{{ information['about_dog'] }}</a>
+    </div>
+    <div style="position: fixed; bottom: 15%; right: 10%; font-weight: bold"><a href="/changes" style="color: #E6A8BA">Keisti informaciją</a></div>
+{% endblock %}

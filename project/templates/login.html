@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Prisijungimas
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="transbox">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="mail" placeholder="El. paštas" type="email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Slaptažodis" type="password">
+            </div>
+            <div>
+                <button class="btn btn-primary" type="submit">Prisijungti</button>
+            </div>
+        </div>
+    </form>
+    <p>Esate dar neprisiregistravę?</p>
+    <p><a href="/register">Registruokitės dabar!</a></p>
+{% endblock %}

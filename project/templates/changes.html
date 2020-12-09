@@ -1,0 +1,36 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Paskyros redagavimas
+{% endblock %}
+
+{% block main %}
+    <h2>Keisti informaciją</h2>
+    <form action="/changes" method="post" style="padding: 3%">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="dog_name" placeholder="Šuns vardas" type="text">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="dog_age" placeholder="Šuns amžius" type="number" min="0">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="dog_breed" placeholder="Šuns veislė" type="text">
+            </div>
+            <p>Šuns lytis:</p>
+            <div class="form-group">
+                  <input type="radio" id="male" name="gender" value="male">
+                  <label for="male">Berniukas</label><br>
+                  <input type="radio" id="female" name="gender" value="female">
+                  <label for="female">Mergaitė</label><br>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="about_me" placeholder="Informacija apie mane." type="text" height="20">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="about_dog" placeholder="Informacija apie šunį." type="text">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="info-button" style="float: right">Keisti informaciją</button>
+            </div>
+    </form>
+{% endblock %}

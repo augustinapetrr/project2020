@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="lt">
+
+    <head>
+        <title>Meet My Dog | {% block title %}{% endblock %}</title>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/style-for-first-page.css" rel="stylesheet" />
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <img src="static/assets/img/pav.jpg" type="image" width="300" height="150" style="position: fixed; top: 7%; left: 40%"></img>
+        <div class="background">
+        {% block main %}{% endblock %}
+    </body>
+</html>

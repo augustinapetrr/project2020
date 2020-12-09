@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registracija
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="transbox" style="top: 58%">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="mail" placeholder="El. paštas | neviešinama" type="email" required="">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Vardas" type="text" required="">
+            </div>
+            <!--<div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="surname" placeholder="Pavardė | neviešinama" type="text" required="">
+            </div>-->
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Slaptažodis" type="password" minlength="8" required="">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirmation" placeholder="Slaptažodis" type="password" minlength="8" required="">
+            </div>
+            <div class="form-group">
+                <button type="submit">Registruotis</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

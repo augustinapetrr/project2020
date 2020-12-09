@@ -1,0 +1,30 @@
+{% extends "inside-layout.html" %}
+
+{% block title %}
+    Sėkmės istorijos
+{% endblock %}
+
+{% block main %}
+    <h2>Pridėk istoriją</h2>
+    <form action="/add_stories" method="post" style="padding: 3%">
+        <div class="form-group" style="margin-bottom: 2%">
+            <input type="text" autofocus class="form-control" autocomplete="off" name="title" placeholder="Pavadinimas">
+        </div>
+        <div class="form-group" style="margin-bottom: 3%">
+            <textarea autofocus class="form-control" autocomplete="off" name="text" rows="4" placeholder="Istorija"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="info-button" value="Pridėti" style="float:right;">Pridėti</button>
+        </div>
+    </form>
+    <script>
+        document.querySelector('#text').onkeyup = function() {
+            if (document.querySelector('#text') === '') {
+                document.querySelector('#submit').disabled = true;
+            }
+            else {
+                document.querySelector('#submit').disabled = false;
+            }
+        }
+    </script>
+{% endblock %}
