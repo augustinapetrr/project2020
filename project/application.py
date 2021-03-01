@@ -140,9 +140,6 @@ def link_profile():
         person_id = user[0]['id']
         return render_template("profile.html", user=user[0], information=information[0])
 
-# As iseinu dabar Irisa pavedzioti, kai grisiu pabaigsiu foruma, date ta dali ir dar biski is zinuciu
-# okei, as i alert idejau toki dalmantinuka ;D pasakysi veliau ar geras xd
-
 @app.route("/post", methods=["GET", "POST"])
 @login_required
 def add_post():
